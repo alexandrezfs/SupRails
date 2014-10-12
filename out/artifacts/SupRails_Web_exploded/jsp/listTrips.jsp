@@ -28,6 +28,31 @@
 <body>
 <c:choose>
     <c:when test="${not empty trips}">
+
+        <form method="GET">
+            <label for="departure">Departure</label>
+            <select id="departure" name="departureId">
+                <option value="">All</option>
+                <c:forEach items="${trainStations}" var="station">
+                    <option value="${station.id}">${station.name} (${station.city})</option>
+                </c:forEach>
+            </select>
+
+
+            <label for="arrival">Arrival</label>
+            <select id="arrival" name="arrivalId">
+                <option value="">All</option>
+                <c:forEach items="${trainStations}" var="station">
+                    <option value="${station.id}">${station.name} (${station.city})</option>
+                </c:forEach>
+            </select>
+
+            <label for="price">Highest Price</label>
+            <input type="number" id="price" name="price" required>
+
+            <input type="submit" value="filter">
+        </form>
+
         <table>
             <tr>
                 <th>Departure</th>
