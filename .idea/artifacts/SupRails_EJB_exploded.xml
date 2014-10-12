@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="SupRails:EJB exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SupRails_EJB_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SupRails/ejb/EJB" />
+      <element id="module-output" name="SupRails" />
+    </root>
+  </artifact>
+</component>
