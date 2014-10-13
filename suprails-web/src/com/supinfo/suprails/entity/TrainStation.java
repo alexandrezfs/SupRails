@@ -10,10 +10,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- *
- * @author bargenson
- */
 @Entity
 @XmlRootElement
 public class TrainStation implements Serializable {

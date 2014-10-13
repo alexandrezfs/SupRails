@@ -17,7 +17,6 @@ public class JmsTester {
         Connection connection = null;
 
         try {
-            System.getProperty(Context.PROVIDER_URL);
             Context context = new InitialContext();
             ConnectionFactory connectionFactory = (ConnectionFactory) context.lookup("ConnectionFactory");
             Destination destination = (Destination) context.lookup("queue/printer");

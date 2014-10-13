@@ -38,13 +38,28 @@ public class PrinterService {
 
     private String buildMessage(CustomerOrder customerOrder) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("ORDER:").append("\n");
-        stringBuilder.append("DEPARTURE: ").append(customerOrder.getTrip().getDepartureStation().getName()).append("\n");
-        stringBuilder.append("ARRIVAL: ").append(customerOrder.getTrip().getArrivalStation().getName()).append("\n");
-        stringBuilder.append("PRICE: ").append(customerOrder.getTrip().getPrice()).append("\n");
-        stringBuilder.append("FIRSTNAME : ").append(customerOrder.getCustomer().getFirstName()).append("\n");
-        stringBuilder.append("LASTNAME: ").append(customerOrder.getCustomer().getLastName()).append("\n");
-        stringBuilder.append("EMAIL: ").append(customerOrder.getCustomer().getEmail()).append("\n");
+        stringBuilder
+                .append("ORDER:")
+                .append("\n");
+        stringBuilder
+                .append("DEPARTURE: ")
+                .append(customerOrder.getTrip().getDepartureStation().getName())
+                .append("\n");
+        stringBuilder
+                .append("ARRIVAL: ").append(customerOrder.getTrip().getArrivalStation().getName())
+                .append("\n");
+        stringBuilder.append("PRICE: ")
+                .append(customerOrder.getTrip().getPrice())
+                .append("\n");
+        stringBuilder.append("FIRSTNAME : ")
+                .append(customerOrder.getCustomer().getFirstName())
+                .append("\n");
+        stringBuilder.append("LASTNAME: ")
+                .append(customerOrder.getCustomer().getLastName())
+                .append("\n");
+        stringBuilder.append("EMAIL: ")
+                .append(customerOrder.getCustomer().getEmail())
+                .append("\n");
 
         return stringBuilder.toString();
     }

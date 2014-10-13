@@ -15,8 +15,7 @@ public class TrainStationService {
 
     @EJB
     private TrainStationDao trainStationDao;
-    
-    
+
     public void addTrainStation(TrainStation station) {
         trainStationDao.addTrainStation(station);
     }

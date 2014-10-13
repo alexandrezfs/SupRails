@@ -5,7 +5,6 @@ import javax.persistence.*;
 /**
  * Created by Alexandre NGUYEN on 13/10/2014.
  */
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "train_type")
