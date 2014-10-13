@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SupRails.iml" filepath="$PROJECT_DIR$/SupRails.iml" />
+      <module fileurl="file://$PROJECT_DIR$/suprails-console/suprails-console.iml" filepath="$PROJECT_DIR$/suprails-console/suprails-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/suprails-web/suprails-web.iml" filepath="$PROJECT_DIR$/suprails-web/suprails-web.iml" />
     </modules>
   </component>
 </project>
