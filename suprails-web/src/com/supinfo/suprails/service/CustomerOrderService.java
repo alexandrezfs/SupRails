@@ -18,8 +18,12 @@ public class CustomerOrderService {
     @EJB
     private EmailService emailService;
 
+    @EJB
+    PrinterService printerService;
+
     public void processCustomerOrder(CustomerOrder customerOrder) {
         customerOrderDao.addCustomerOrder(customerOrder);
         emailService.sendMail(customerOrder.getCustomer());
+        printerService.print(customerOrder);
     }
 }
