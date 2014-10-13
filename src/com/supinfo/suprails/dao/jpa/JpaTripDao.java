@@ -3,6 +3,7 @@ package com.supinfo.suprails.dao.jpa;
 import com.supinfo.suprails.dao.TripDao;
 import com.supinfo.suprails.entity.TrainStation;
 import com.supinfo.suprails.entity.Trip;
+import com.supinfo.suprails.entity.Trip_;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -58,15 +59,15 @@ public class JpaTripDao implements TripDao {
         List<Predicate> predicates = new ArrayList<Predicate>();
 
         if(departureStation != null) {
-            predicates.add(cBuilder.equal(trip.get("departureStation"), departureStation));
+            predicates.add(cBuilder.equal(trip.get(Trip_.departureStation), departureStation));
         }
 
         if(arrivalStation != null) {
-            predicates.add(cBuilder.equal(trip.get("arrivalStation"), arrivalStation));
+            predicates.add(cBuilder.equal(trip.get(Trip_.arrivalStation), arrivalStation));
         }
 
         if(highestPrice != null) {
-            predicates.add(cBuilder.lessThanOrEqualTo(trip.get("price").as(BigDecimal.class), highestPrice));
+            predicates.add(cBuilder.lessThanOrEqualTo(trip.get(Trip_.price), highestPrice));
         }
 
         query.where(predicates.toArray(new Predicate[predicates.size()]));

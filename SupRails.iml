@@ -32,15 +32,17 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <output url="file://$MODULE_DIR$/out/production/SupRails" />
-    <output-test url="file://$MODULE_DIR$/out/test/SupRails" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/generated" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -51,6 +53,7 @@
     <orderEntry type="library" name="validation-api-1.0.0.GA" level="project" />
     <orderEntry type="library" name="hibernate-validator-4.2.0.Final" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
+    <orderEntry type="library" name="hibernate-jpamodelgen-1.3.0.Final" level="project" />
   </component>
 </module>
 
