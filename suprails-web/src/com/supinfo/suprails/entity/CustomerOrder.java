@@ -1,12 +1,14 @@
 package com.supinfo.suprails.entity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
  * Created by Alexandre NGUYEN on 12/10/2014.
  */
 @Entity
+@XmlRootElement
 public class CustomerOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;

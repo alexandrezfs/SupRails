@@ -1025,7 +1025,6 @@
       <column name="Offset" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="Is_DST" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="Abbreviation" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="Time_zone_id,Transition_type_id"/>
     </table>
     <table name="user" schema="" catalog="mysql" type="SYSTEM TABLE">
       <column name="Host" sqlType="CHAR" precision="60" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
@@ -1071,7 +1070,6 @@
       <column name="plugin" sqlType="CHAR" precision="64" scale="0" nullable="true" jdbcType="1" def="Jyc="/>
       <column name="authentication_string" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="password_expired" sqlType="ENUM" precision="2" scale="0" nullable="false" jdbcType="1" def="J04n"/>
-      <primary-key name="PRIMARY" columns="Host,User"/>
     </table>
     <table name="accounts" schema="" catalog="performance_schema" type="SYSTEM TABLE">
       <column name="USER" sqlType="CHAR" precision="16" scale="0" nullable="true" jdbcType="1"/>
@@ -1978,9 +1976,6 @@
       <column name="firstName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="lastName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="trip_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_c0yh2rocg5o4q6hb9oud9drkv" columns="trip_id" ref-table="trip" ref-schema="" ref-catalog="suprails" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_c0yh2rocg5o4q6hb9oud9drkv" unique="false" columns="trip_id"/>
     </table>
     <table name="train" schema="" catalog="suprails" type="TABLE">
       <column name="train_type" sqlType="VARCHAR" precision="31" scale="0" nullable="false" jdbcType="12"/>
@@ -1989,55 +1984,34 @@
       <column name="traction" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="maxWeight" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="seatQuantity" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="trainstation" schema="" catalog="suprails" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="address" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_19ak4djrj7prg75uugprvyb9t" table="trip" schema="" catalog="suprails" columns="arrivalStation_id"/>
-      <exported-key name="FK_sc71y9eqpx79o1l55l9edm4c" table="trip" schema="" catalog="suprails" columns="departureStation_id"/>
-      <index name="UK_7a3nb9p7uo4a783y7i5ib8rwc" unique="true" columns="name"/>
     </table>
     <table name="trip" schema="" catalog="suprails" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="price" sqlType="DECIMAL" precision="19" scale="2" nullable="false" jdbcType="3"/>
       <column name="arrivalStation_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="departureStation_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_19ak4djrj7prg75uugprvyb9t" columns="arrivalStation_id" ref-table="trainstation" ref-schema="" ref-catalog="suprails" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_sc71y9eqpx79o1l55l9edm4c" columns="departureStation_id" ref-table="trainstation" ref-schema="" ref-catalog="suprails" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="FK_c0yh2rocg5o4q6hb9oud9drkv" table="customerorder" schema="" catalog="suprails" columns="trip_id"/>
-      <index name="FK_19ak4djrj7prg75uugprvyb9t" unique="false" columns="arrivalStation_id"/>
-      <index name="FK_sc71y9eqpx79o1l55l9edm4c" unique="false" columns="departureStation_id"/>
     </table>
     <table name="table" schema="" catalog="test" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="name" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="train_station" schema="" catalog="test" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="address" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_gmc2mi3hd9hao3snogkit3rbr" table="trip" schema="" catalog="test" columns="departureStation_id"/>
-      <exported-key name="FK_p4s5ao59ou8x4b590bb35ig3r" table="trip" schema="" catalog="test" columns="arrivalStation_id"/>
-      <index name="UK_5uopqo05oeolv21rkot35flxl" unique="true" columns="name"/>
     </table>
     <table name="trip" schema="" catalog="test" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
       <column name="arrivalStation_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="departureStation_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_gmc2mi3hd9hao3snogkit3rbr" columns="departureStation_id" ref-table="train_station" ref-schema="" ref-catalog="test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_p4s5ao59ou8x4b590bb35ig3r" columns="arrivalStation_id" ref-table="train_station" ref-schema="" ref-catalog="test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_gmc2mi3hd9hao3snogkit3rbr" unique="false" columns="departureStation_id"/>
-      <index name="FK_p4s5ao59ou8x4b590bb35ig3r" unique="false" columns="arrivalStation_id"/>
     </table>
   </data-source>
 </component>
