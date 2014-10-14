@@ -14,28 +14,28 @@ SupRails
 Simply import a new module into your intellijIDEA workspace as you would do for any other project.
 See https://www.jetbrains.com/idea/documentation/ for more information.
 
-IntellijIDEA should install every dependences needed, if not, set it youself by adding the whole `lib/` folder to the module dependencies.
+IntellijIDEA should install every dependences needed, if not, set it yourself by adding the whole `lib/` folder to the module dependencies.
 
 Make sure that your JDK is set to `1.7.x` when you import the module.
 
 Once you imported it into IntellijIDEA, you have to :
 
 + Create an empty database
-+ Make sure your have the JDBC driver JAR in the glassfish LIB folder. Otherwise copy/paste the JAR into it
++ Make sure your have the `JDBC` driver `JAR` in the glassfish `lib` folder. Otherwise copy/paste the `JAR` into it
 + Create the Datasource Pool in Glassfish 3
-+ Create the JDBC Resource in Glassfish 3, give it a JNDI name
-+ In `src/META-INF/persistence.xml`, set up the right JNDI name for the data source you've just created
++ Create the JDBC Resource in Glassfish 3, give it a `JNDI` name
++ In `src/META-INF/persistence.xml`, set up the right `JNDI` name for the data source you've just created
 + Create the artifact if it's not already done by IntellijIDEA
 + Setup the server, so add a new GF3 server. Associate the artifact to it, and make sure that GF3 is using JDK `1.7.x`
-+ IMPORT THE FOLLOWING LIBRARIES FROM GLASSFISH 3 FOLDER :
++ Set up the following `jars` from the `glassfish` folder as module dependencies :
   + `javax.jms.jar` from `modules` folder
   + `gf-client.jar` from `lib` folder
 
 
 ##Setting up the MetaModel API (Hibernate)
 
-The META MODEL API generates classes for entities with volatile attributes in order to make it easy to change an entity attribute.
-Your are not required to enable it if you don't touch entities, but here are the steps to enable it :
+The MetaModel API generates classes for entities with `volatile` attributes in order to make easy to change an entity attribute.
+Your are not required to enable it if you don't touch entities, but here are steps to enable it :
 
 + In `IntellijIDEA, go to file > settings` (`IntellijIDEA > preferences` on MAC OS X)
 + In the `compiler > Annotation Processors` section, select `suprails-web` module and check Enable annotation processing
