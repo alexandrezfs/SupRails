@@ -44,7 +44,7 @@ Your are not required to enable it if you don't touch entities, but here are ste
 + Click `Apply`, then `OK`
 
 
-##JMS Listener + REST Services console Usage
+##JMS Listener + SOAP Services console Usage
 
 + To launch the JMS Listener, run `JmsStarter`
 + To Try the REST Web services (based on JERSEY) client on the console, run `ClientWebService`
