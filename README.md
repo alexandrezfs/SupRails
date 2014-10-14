@@ -47,7 +47,7 @@ Your are not required to enable it if you don't touch entities, but here are ste
 ##JMS Listener + SOAP Services console Usage
 
 + To launch the JMS Listener, run `JmsStarter`
-+ To Try the REST Web services (based on JERSEY) client on the console, run `ClientWebService`
++ To Try the SOAP Web services client on the console, run `ClientWebService`
 
 ##Contribution ?!
 This project doesn't aim to be improved as this is just a course lab of SUPINFO International University.
