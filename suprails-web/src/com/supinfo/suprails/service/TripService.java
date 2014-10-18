@@ -25,8 +25,6 @@ public class TripService {
 
     public List<Trip> findTripByDepartureArrivalPrice(Long departureStationId, Long arrivalStationId, BigDecimal highestPrice) {
 
-        System.out.println(departureStationId + "===AAA" + arrivalStationId);
-
         TrainStation departure = (departureStationId == null) ? null : trainStationDao.findTrainStationById(departureStationId);
         TrainStation arrival = (arrivalStationId == null) ? null : trainStationDao.findTrainStationById(arrivalStationId);
 
